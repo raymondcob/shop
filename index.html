@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
+
+
+    <title>Shop!</title>
+  </head>
+  <body>
+    
+    <main class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal_new_product">Add</button>
+                    </div>
+                    <div class="card-body">
+                        <div id="div_table_cont" class="table-responsive">
+                           
+                            
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="modal_new_product" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Insert new Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <form id="frm_new_prod" action="assets/php/insert.php" method="post">
+                  
+              
+              <div class="modal-body">
+                <label for="fname">Product:</label>
+                <input class="form-control" type="text" id="prod_name" name="name"  required><br><br>
+                <label for="lname">Description:</label>
+                <input class="form-control" type="text" id="prod_desc" name="description" required><br><br>
+                <label for="lname">Quantity:</label>
+                <input class="form-control" type="number" id="prod_qty" name="quantity" required><br><br>
+                <label for="lname">Image:</label>
+                <input class="form-control" type="text" id="prod_img" name="image" required><br><br>
+                <label for="lname">Price:</label>
+                <input class="form-control" type="number" id="prod_price" name="price" required><br><br>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" id="submit_button" class="btn btn-primary">Save</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+    
+    </main>
+    
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="assets/js/index.js" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+      
+      
+        $("#submit_button").click(function(){
+    
+                Swal.fire({
+                    title: "Successful!",
+                    text: "Record has been Entered!",
+                    icon: "success",
+                    timer:1200,
+                    
+                    }); 
+    
+        })
+      
+      
+      </script>
+
+    
+    
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
